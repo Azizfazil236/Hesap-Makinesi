@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hesap_Makinesi.Bilimsel"
+             Title="Bilimsel">
+
+    <VerticalStackLayout Padding="10">
+        <Entry x:Name="InputEntry" Placeholder="İşlem girin" FontSize="24" />
+        <Label x:Name="ResultLabel" Text="Sonuç" FontSize="24" HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="5">
+
+            <!-- 1. Satır: Bilimsel fonksiyonlar -->
+            <Button Text="√" Clicked="OnScientificClicked" Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" />
+            <Button Text="x²" Clicked="OnScientificClicked" Grid.Row="0" Grid.Column="1" BackgroundColor="Gray" />
+            <Button Text="sin" Clicked="OnScientificClicked" Grid.Row="0" Grid.Column="2" BackgroundColor="Gray" />
+            <Button Text="cos" Clicked="OnScientificClicked" Grid.Row="0" Grid.Column="3" BackgroundColor="Gray" />
+
+            <!-- 2. Satır: Bilimsel fonksiyonlar devam -->
+            <Button Text="tan" Clicked="OnScientificClicked" Grid.Row="1" Grid.Column="0" BackgroundColor="Gray" />
+            <Button Text="AC" Clicked="OnClearClicked" Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" />
+            <Button Text="." Clicked="OnNumberClicked" Grid.Row="1" Grid.Column="2" BackgroundColor="Gray" />
+            <Button Text="÷" Clicked="OnOperatorClicked" Grid.Row="1" Grid.Column="3" BackgroundColor="Gray" />
+
+            <!-- 3. Satır: 7 8 9 × -->
+            <Button Text="7" Clicked="OnNumberClicked" Grid.Row="2" Grid.Column="0" BackgroundColor="Gray" />
+            <Button Text="8" Clicked="OnNumberClicked" Grid.Row="2" Grid.Column="1" BackgroundColor="Gray" />
+            <Button Text="9" Clicked="OnNumberClicked" Grid.Row="2" Grid.Column="2" BackgroundColor="Gray" />
+            <Button Text="×" Clicked="OnOperatorClicked" Grid.Row="2" Grid.Column="3" BackgroundColor="Gray" />
+
+            <!-- 4. Satır: 4 5 6 - -->
+            <Button Text="4" Clicked="OnNumberClicked" Grid.Row="3" Grid.Column="0" BackgroundColor="Gray" />
+            <Button Text="5" Clicked="OnNumberClicked" Grid.Row="3" Grid.Column="1" BackgroundColor="Gray" />
+            <Button Text="6" Clicked="OnNumberClicked" Grid.Row="3" Grid.Column="2" BackgroundColor="Gray" />
+            <Button Text="-" Clicked="OnOperatorClicked" Grid.Row="3" Grid.Column="3" BackgroundColor="Gray" />
+
+            <!-- 5. Satır: 1 2 3 + -->
+            <Button Text="1" Clicked="OnNumberClicked" Grid.Row="4" Grid.Column="0" BackgroundColor="Gray" />
+            <Button Text="2" Clicked="OnNumberClicked" Grid.Row="4" Grid.Column="1" BackgroundColor="Gray" />
+            <Button Text="3" Clicked="OnNumberClicked" Grid.Row="4" Grid.Column="2" BackgroundColor="Gray" />
+            <Button Text="+" Clicked="OnOperatorClicked" Grid.Row="4" Grid.Column="3" BackgroundColor="Gray" />
+
+            <!-- 6. Satır: 0 = -->
+            <Button Text="0" Clicked="OnNumberClicked" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Gray" />
+            <Button Text="=" Clicked="OnCalculateClicked" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" BackgroundColor="Gray" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

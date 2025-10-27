@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hesap_Makinesi.MainPage">
+    <ContentPage.Resources>
+
+        <Style TargetType="Button">
+
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+
+
+
+        </Style>
+
+
+        <Style TargetType="Button" x:Key="Mb">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+
+
+
+
+
+
+    </ContentPage.Resources>
+
+
+
+
+    <Grid RowDefinitions="Auto, 2*, *,*,*,*,*,*,*"
+       ColumnDefinitions="*,*,*,*">
+
+        <Label
+         x:Name="history"
+         Text=""
+         HorizontalTextAlignment="End"
+         FontSize="Large" 
+         Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+         TextColor="Black"
+         BackgroundColor="Azure">
+
+
+
+        </Label>
+
+        <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+            x:Name="cScreen"
+            IsReadOnly="True"
+            FontSize="48"
+            Text="0"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End"
+            VerticalOptions="Fill"
+            HeightRequest="171"
+            TextColor="Black"
+            BackgroundColor="Azure"
+            
+            />
+
+        <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="4">
+
+            <Grid Grid.Row="2" 
+               ColumnDefinitions="*,*,*,*,*,*"
+               Margin="5">
+                <Button Text="MC" FontSize="Small" Margin="6,0,6,0" Grid.Column="0" Style="{StaticResource Mb}"/>
+                <Button Text="MR" FontSize="Small" Margin="6,0,6,0" Grid.Column="1" Style="{StaticResource Mb}"/>
+                <Button Text="M+" FontSize="Small" Margin="6,0,6,0" Grid.Column="2" Style="{StaticResource Mb}"/>
+                <Button Text="M-" FontSize="Small" Margin="6,0,6,0" Grid.Column="3" Style="{StaticResource Mb}"/>
+                <Button Text="MS" FontSize="Small" Margin="6,0,6,0" Grid.Column="4" Style="{StaticResource Mb}"/>
+                <Button Text="M˅" FontSize="Small" Margin="6,0,6,0" Grid.Column="5" Style="{StaticResource Mb}"/>
+            </Grid>
+
+
+
+
+
+
+
+        </HorizontalStackLayout>
+
+
+        <Button Grid.Row="3" Grid.Column="0"  Text="%" StyleClass="operation" FontSize="Medium"/>
+        <Button Grid.Row="3" Grid.Column="1"  Text="CE" StyleClass="operation" FontSize="Medium"/>
+        <Button Grid.Row="3" Grid.Column="2"  Text="C" StyleClass="operation" FontSize="Medium" Clicked="DeleteClicked"/>
+        <Button Grid.Row="3" Grid.Column="3"  Text="⟵" StyleClass="operation" FontSize="Medium"/>
+
+        <Button Grid.Row="4" Grid.Column="0"  Text="¹⁄ₓ" StyleClass="operation" FontSize="Medium"/>
+        <Button Grid.Row="4" Grid.Column="1"  Text="X²" StyleClass="operation" FontSize="Medium"/>
+        <Button Grid.Row="4" Grid.Column="2"  Text="√x" StyleClass="operation" FontSize="Medium"/>
+        <Button Grid.Row="4" Grid.Column="3"  Text="÷" StyleClass="operation" Clicked="OperatorClicked"/>
+
+        <Button Grid.Row="5" Grid.Column="0"  Text="7" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="5" Grid.Column="1"  Text="8" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="5" Grid.Column="2"  Text="9" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="5" Grid.Column="3"  Text="x" StyleClass="operation" Clicked="OperatorClicked"/>
+
+        <Button Grid.Row="6" Grid.Column="0" Text="4"  StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="6" Grid.Column="1" Text="5"  StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="6" Grid.Column="2" Text="6"  StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="6" Grid.Column="3" Text="—" StyleClass="operation" Clicked="OperatorClicked"/>
+
+
+        <Button Grid.Row="7" Grid.Column="0" Text="1" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="7" Grid.Column="1" Text="2" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="7" Grid.Column="2" Text="3" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="7" Grid.Column="3" Text="+" StyleClass="operation" Clicked="OperatorClicked"/>
+
+        <Button Grid.Row="8" Grid.Column="0" Text="+⁄-" StyleClass="number"/>
+        <Button Grid.Row="8" Grid.Column="1" Text="0" StyleClass="number" Clicked="NumClicked"/>
+        <Button Grid.Row="8" Grid.Column="2" Text="," StyleClass="number"/>
+        <Button Grid.Row="8" Grid.Column="3" Text="=" StyleClass="equal" Clicked="EqualClicked" />
+
+
+
+    </Grid>
+
+
+
+</ContentPage>
